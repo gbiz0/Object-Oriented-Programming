@@ -1,0 +1,9 @@
+create table funcionario(
+    idfuncionario serial not null,
+    nomefuncionario varchar(35),
+    cpffuncionario char(11),
+    telefonefuncionario varchar(14),
+    cidadefuncionario varchar(35),
+    constraint pk_funcionario primary key(idfuncionario)
+
+);
