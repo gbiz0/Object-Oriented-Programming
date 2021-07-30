@@ -2,80 +2,62 @@ package br.com.projetofuncinarios.model;
 
 public class Funcionario {
     
-    private Integer idFuncionarios;
-    private String nameFuncionarios;
-    private Integer cpfFuncionarios;
-    private String cityFuncionarios;
-    private Integer cellFuncionarios;
-
-    public Funcionario(Integer idFuncionarios, String nameFuncionarios, Integer cpfFuncionarios, String cityFuncionarios, Integer cellFuncionarios) {
-        this.idFuncionarios = idFuncionarios;
-        this.nameFuncionarios = nameFuncionarios;
-        this.cpfFuncionarios = cpfFuncionarios;
-        this.cityFuncionarios = cityFuncionarios;
-        this.cellFuncionarios = cellFuncionarios;
-    }
+    private Integer idFuncionario;
+    private String nameFuncionario;
+    private String cpfFuncionario;
+    private String cityFuncionario;
+    private String cellFuncionario;
 
     public Funcionario() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public Integer getIdFuncionarios() {
-        return idFuncionarios;
+    public Funcionario(Integer idFuncionario, String nameFuncionario, String cpfFuncionario, String cityFuncionario, String cellFuncionario) {
+        this.idFuncionario = idFuncionario;
+        this.nameFuncionario = nameFuncionario;
+        this.cpfFuncionario = cpfFuncionario;
+        this.cityFuncionario = cityFuncionario;
+        this.cellFuncionario = cellFuncionario;
     }
 
-    public void setIdFuncionarios(Integer idFuncionarios) {
-        this.idFuncionarios = idFuncionarios;
+    public Integer getIdFuncionario() {
+        return idFuncionario;
     }
 
-    public String getNameFuncionarios() {
-        return nameFuncionarios;
+    public void setIdFuncionario(Integer idFuncionario) {
+        this.idFuncionario = idFuncionario;
     }
 
-    public void setNameFuncionarios(String nameFuncionarios) {
-        this.nameFuncionarios = nameFuncionarios;
-    }
-
-    public Integer getCpfFuncionarios() {
-        return cpfFuncionarios;
-    }
-
-    public void setCpfFuncionarios(Integer cpfFuncionarios) {
-        this.cpfFuncionarios = cpfFuncionarios;
-    }
-
-    public String getCityFuncionarios() {
-        return cityFuncionarios;
-    }
-
-    public void setCityFuncionarios(String cityFuncionarios) {
-        this.cityFuncionarios = cityFuncionarios;
-    }
-
-    public Integer getCellFuncionarios() {
-        return cellFuncionarios;
-    }
-
-    public void setCellFuncionarios(Integer cellFuncionarios) {
-        this.cellFuncionarios = cellFuncionarios;
-    }
-
-    public void setCpfFuncionario(String cpfFuncionario) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String getNameFuncionario() {
+        return nameFuncionario;
     }
 
     public void setNameFuncionario(String nameFuncionario) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.nameFuncionario = nameFuncionario;
+    }
+
+    public String getCpfFuncionario() {
+        return cpfFuncionario;
+    }
+
+    public void setCpfFuncionario(String cpfFuncionario) {
+        this.cpfFuncionario = cpfFuncionario;
+    }
+
+    public String getCityFuncionario() {
+        return cityFuncionario;
     }
 
     public void setCityFuncionario(String cityFuncionario) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.cityFuncionario = cityFuncionario;
     }
 
-    public void setCellFuncionario(Integer cellFuncionario) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String getCellFuncionario() {
+        return cellFuncionario;
     }
 
-
+    public void setCellFuncionario(String cellFuncionario) {
+        this.cellFuncionario = cellFuncionario;
+    }
+    
+    
 }
-

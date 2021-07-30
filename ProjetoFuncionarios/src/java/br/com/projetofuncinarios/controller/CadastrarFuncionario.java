@@ -13,16 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(name = "CadastrarFuncionario", urlPatterns = {"/CadastrarFuncionario"})
 public class CadastrarFuncionario extends HttpServlet {
-
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -30,7 +21,7 @@ public class CadastrarFuncionario extends HttpServlet {
            String nameFuncionario = request.getParameter("nameFuncionario");
             String cpfFuncionario = request.getParameter("cpfFuncionario");
             String cityFuncionario = request.getParameter("cityFuncionario");
-            Integer cellFuncionario = Integer.parseInt(request.getParameter ("cellFuncionario"));
+            String cellFuncionario = request.getParameter ("cellFuncionario");
             String mensagem = null;
 
             Funcionario funcionario = new Funcionario();
@@ -41,7 +32,7 @@ public class CadastrarFuncionario extends HttpServlet {
             funcionario.setCellFuncionario(cellFuncionario);
   
             try {
-                GenericDAO dao = (GenericDAO) new FuncionarioDAOImpl();
+                GenericDAO dao = new FuncionarioDAOImpl();
                 if (dao.cadastrar(funcionario)) {
                     mensagem = "Cliente cadastrado com sucesso!";
                 } else {

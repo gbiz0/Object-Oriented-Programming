@@ -6,6 +6,15 @@
         <title>Página de Cadastro</title>
     </head>
     <body>
+        <style>
+            body{
+                background-color: aquamarine; 
+                font-family: arial;
+                color: blue;
+                text-align: center;
+            }
+            
+        </style>
         <h1>Cadastrar</h1>
         <form name="cadastrarfuncionario" action="CadastrarFuncionario" method="POST">
             <table align="center" border="0">
