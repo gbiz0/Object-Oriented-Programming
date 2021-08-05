@@ -10,7 +10,7 @@ public class ConnectionFactory {
      public static Connection getConnection() throws Exception {
         try {
             Class.forName("org.postgresql.Driver");
-            return DriverManager.getConnection("jdbc:postgresql://localhost:5432/bd_loja", "postgres", "gu092005");
+            return DriverManager.getConnection("jdbc:postgresql://localhost:5432/bd_loja", "postgres", "postdba");
         } catch (Exception e) {
             throw new Exception(e.getMessage());
         }

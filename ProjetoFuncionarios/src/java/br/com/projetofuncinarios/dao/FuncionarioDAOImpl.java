@@ -51,7 +51,22 @@ public class FuncionarioDAOImpl implements GenericDAO{
 
     @Override
     public List<Object> listar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Object> funcionarios = new ArrayList<>();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        
+        String sql = "select * from funcionario;";
+        
+        try {
+            stmt = conn.prepareStatement(sql);
+            rs = stmt.executeQuery();
+            
+            while (rs.next()) {
+                Funcionario funcionario = new Funcionario
+                funcionario.set 
+            }
+        }
+   
     }
 
     @Override
