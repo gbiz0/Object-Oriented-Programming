@@ -4,6 +4,9 @@ import br.com.projetofuncinarios.model.Funcionario;
 import br.com.projetofuncinarios.util.ConnectionFactory;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class FuncionarioDAOImpl implements GenericDAO{
@@ -55,18 +58,35 @@ public class FuncionarioDAOImpl implements GenericDAO{
         PreparedStatement stmt = null;
         ResultSet rs = null;
         
-        String sql = "select * from funcionario;";
+        String sql = "select * from funcionarios;";
         
         try {
             stmt = conn.prepareStatement(sql);
             rs = stmt.executeQuery();
             
             while (rs.next()) {
-                Funcionario funcionario = new Funcionario
-                funcionario.set 
+                Funcionario funcionario = new Funcionario();
+                funcionario.setIdFuncionario(rs.getInt("idfuncionarios"));
+                funcionario.setNameFuncionario(rs.getString("namefuncionarios"));
+                funcionario.setCpfFuncionario(rs.getString("cpffuncionarios"));
+                funcionario.setCityFuncionario(rs.getString("cityfuncionarios"));
+                funcionario.setCellFuncionario(rs.getString("cellfuncionarios"));
+                funcionarios.add(funcionario);
+                        
             }
-        }
-   
+             } catch (SQLException ex) {
+            System.out.println("Problemas ao listar clientes! Erro:" + ex.getMessage());
+            ex.printStackTrace();
+
+        } finally {
+            try {
+                ConnectionFactory.closeConnection(conn, stmt, rs);
+            } catch (Exception e) {
+                System.out.println("Problemas ao fechar a conexão! Erro" + e.getMessage());
+                e.printStackTrace();
+            }
+        }  
+        return funcionarios;
     }
 
     @Override

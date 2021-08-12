@@ -19,6 +19,6 @@
         <h1>Cadastro de Funcionarios</h1>
         <h2 align="center">Controle de Funcionarios</h2>
         <p align="center"><a href="cadastrarfuncionario.jsp">Clique  aqui para cadastrar</a></p>
-        <p align="center"><a href="listarfuncionario.jsp">Clique  aqui para listar</a></p>
+        <p align="center"><a href="ListarFuncionario">Clique  aqui para listar</a></p>
     </body>
 </html>

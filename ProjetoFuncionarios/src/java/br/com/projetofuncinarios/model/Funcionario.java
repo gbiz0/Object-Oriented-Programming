@@ -58,6 +58,10 @@ public class Funcionario {
     public void setCellFuncionario(String cellFuncionario) {
         this.cellFuncionario = cellFuncionario;
     }
+
+    public void add(Funcionario funcionario) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
 }
