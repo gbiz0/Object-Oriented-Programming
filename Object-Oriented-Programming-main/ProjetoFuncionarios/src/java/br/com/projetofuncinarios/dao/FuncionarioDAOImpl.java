@@ -1,0 +1,106 @@
+package br.com.projetofuncinarios.dao;
+
+import br.com.projetofuncinarios.model.Funcionario;
+import br.com.projetofuncinarios.util.ConnectionFactory;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class FuncionarioDAOImpl implements GenericDAO{
+    
+       private Connection conn;
+
+    public FuncionarioDAOImpl() throws Exception {
+        try {
+            this.conn = ConnectionFactory.getConnection();
+            System.out.println("Conectado com sucesso!");
+        } catch (Exception ex) {
+            throw new Exception(ex.getMessage());
+        }
+    }
+    
+    @Override
+    public Boolean cadastrar(Object object) {
+
+        Funcionario funcionario = (Funcionario) object;
+        PreparedStatement stmt = null;
+                
+        String sql = "Insert into funcionarios(namefuncionarios, cpffuncionarios, cityfuncionarios, cellfuncionarios) "
+                + "values (?, ?, ?, ?);";
+        try {
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1, funcionario.getNameFuncionario());
+            stmt.setString(2, funcionario.getCpfFuncionario());
+            stmt.setString(3, funcionario.getCityFuncionario());
+            stmt.setString(4, funcionario.getCellFuncionario());
+            stmt.execute();
+            return true;
+        } catch (Exception ex) {
+            System.out.println("Problemas ao cadastrar usuário! Erro: " + ex.getMessage());
+            ex.printStackTrace();
+            return false;
+        } finally {
+            try {
+                ConnectionFactory.closeConnection(conn, stmt);
+            } catch (Exception ex) {
+                System.out.println("Problemas ao fechar a conexão! Erro: " + ex.getMessage());
+                ex.printStackTrace();
+            }
+        }
+    }
+
+    @Override
+    public List<Object> listar() {
+        List<Object> funcionarios = new ArrayList<>();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        
+        String sql = "select * from funcionarios;";
+        
+        try {
+            stmt = conn.prepareStatement(sql);
+            rs = stmt.executeQuery();
+            
+            while (rs.next()) {
+                Funcionario funcionario = new Funcionario();
+                funcionario.setIdFuncionario(rs.getInt("idfuncionarios"));
+                funcionario.setNameFuncionario(rs.getString("namefuncionarios"));
+                funcionario.setCpfFuncionario(rs.getString("cpffuncionarios"));
+                funcionario.setCityFuncionario(rs.getString("cityfuncionarios"));
+                funcionario.setCellFuncionario(rs.getString("cellfuncionarios"));
+                funcionarios.add(funcionario);
+                        
+            }
+             } catch (SQLException ex) {
+            System.out.println("Problemas ao listar clientes! Erro:" + ex.getMessage());
+            ex.printStackTrace();
+
+        } finally {
+            try {
+                ConnectionFactory.closeConnection(conn, stmt, rs);
+            } catch (Exception e) {
+                System.out.println("Problemas ao fechar a conexão! Erro" + e.getMessage());
+                e.printStackTrace();
+            }
+        }  
+        return funcionarios;
+    }
+
+    @Override
+    public Boolean excluir(int idOject) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Object carregar(int idObject) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Boolean alterar(Object object) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+}
