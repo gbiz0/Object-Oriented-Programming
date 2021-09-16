@@ -23,8 +23,8 @@
             </tr>
             
             <%
-                List<Computador> computador = (List<Computador>) request.getAttribute("computador");
-                for(Computador computador:computador){
+                List<Computador> computador = (List<Computador>) request.getAttribute("computadores");
+                for(Computador computador:computadores){
             %>
             <tr>
                 <td align="center"><%=computador.getIdComputador()%></td>

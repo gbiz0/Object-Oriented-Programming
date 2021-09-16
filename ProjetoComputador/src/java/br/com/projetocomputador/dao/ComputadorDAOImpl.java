@@ -56,7 +56,7 @@ public class ComputadorDAOImpl implements GenericDAO{
 
     @Override
     public List<Object> listar() {
-        List<Object> computador = new ArrayList<>();
+        List<Object> computadores = new ArrayList<>();
         PreparedStatement stmt = null;
         ResultSet rs = null;
         
@@ -67,13 +67,14 @@ public class ComputadorDAOImpl implements GenericDAO{
             rs = stmt.executeQuery();
             
             while (rs.next()) {
+                
                 Computador computador = new Computador();
                 computador.setIdComputador(rs.getInt("idcomputador"));
                 computador.setFornecedorComputador(rs.getString("fornecedorcomputador"));
                 computador.setPrecoComputador(rs.getInt("precocomputador"));
                 computador.setSsdComputador(rs.getInt("ssdcomputador"));
                 computador.setRamComputador(rs.getInt("ramcomputador"));
-                computador.add(computador);
+                computadores.add(computador);
                         
             }
              } catch (SQLException ex) {
@@ -88,7 +89,7 @@ public class ComputadorDAOImpl implements GenericDAO{
                 e.printStackTrace();
             }
         }  
-        return computador;
+        return computadores;
     }
 
     
