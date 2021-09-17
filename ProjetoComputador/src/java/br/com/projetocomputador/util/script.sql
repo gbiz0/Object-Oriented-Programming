@@ -1,6 +1,6 @@
 ﻿/*******bd_computador*******/
 
-create table computador 
+create table computadores 
 (
 	idComputador serial not  null,
 	fornecedorComputador varchar (30),

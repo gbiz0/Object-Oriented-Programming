@@ -1,9 +1,3 @@
-<%-- 
-    Document   : index
-    Created on : 16/09/2021, 14:06:05
-    Author     : Aluno
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,9 +6,25 @@
         <title>JSP Page</title>
     </head>
     <body>
-         <h1>Cadastro de Computadores</h1>
-        <h2 align="center">Controle de Computadores</h2>
-        <p align="center"><a href="cadastrarcomputador.jsp">Clique  aqui para cadastrar</a></p>
-        <p align="center"><a href="ListarComputador">Clique  aqui para listar</a></p>
+        <style>
+            *{
+                font-family: arial;
+                padding: 0;
+                margin: 0;
+            }
+            h1{
+                margin-top: 1rem;
+                text-align: center;
+            }
+            h2{
+                margin-top: 4rem;
+            }
+            p cadastro{
+                margin-top: 3rem;
+            }
+        </style>
+         <h1>Controle de Computadores</h1>
+        <p id="cadastro"><a href="cadastrarcomputador.jsp">Clique  aqui para cadastrar</a></p>
+        <p id="listar"><a href="ListarComputador">Clique  aqui para listar</a></p>
     </body>
 </html>

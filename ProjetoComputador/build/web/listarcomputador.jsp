@@ -10,7 +10,7 @@
 <h1>Lista de Computadores</h1>
          <table align="center" border="1">
             <tr>
-                <td colspan="7" align="center">Lista de Clientes</td>
+                <td colspan="7" align="center">Lista de Computadores</td>
             </tr>
             
             <tr>
@@ -23,7 +23,7 @@
             </tr>
             
             <%
-                List<Computador> computador = (List<Computador>) request.getAttribute("computadores");
+                List<Computador> computadores = (List<Computador>) request.getAttribute("computadores");
                 for(Computador computador:computadores){
             %>
             <tr>

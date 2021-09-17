@@ -22,7 +22,7 @@ public class ListarComputador extends HttpServlet {
              try {
                 
             GenericDAO dao = new ComputadorDAOImpl();
-            request.setAttribute("computador", dao.listar());
+            request.setAttribute("computadores", dao.listar());
             request.getRequestDispatcher("listarcomputador.jsp").forward(request, response);
             }
             catch (Exception e){
