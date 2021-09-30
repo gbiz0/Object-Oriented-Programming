@@ -6,12 +6,25 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <style>
+            *{
+                font-family: arial;
+                padding: auto;
+                margin: auto;
+            }
+            body{
+                background-color: #d3d3d3;
+            }
+            h1{ 
+                margin-top: 1rem;
+                text-align: center;
+                color: #8257e6;
+            }
+        </style>
         <h1>Cadastrar</h1>
         <form name="cadastrarcomputador" action="CadastrarComputador" method="POST">
             <table align="center" border="0">
-                    <tr>
-                        <th colspan="2" align="center">Cadastro de Computadores</th>
-                    </tr>
+                    
 
                     <tr>
                         <th colspan="2" align="center">${mensagem}</th>
